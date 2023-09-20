@@ -25,7 +25,7 @@ def predict_one_img(model, img_dataset, args):
             output = model(data)
             # output = nn.functional.interpolate(output, scale_factor=(1//args.slice_down_scale,1//args.xy_down_scale,1//args.xy_down_scale), mode='trilinear', align_corners=False) # 空间分辨率恢复到原始size
             img_dataset.update_result(output.detach().cpu())
-
+    # 测试git修改
     pred = img_dataset.recompone_result()
     pred = torch.argmax(pred,dim=1)
 
